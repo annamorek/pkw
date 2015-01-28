@@ -4,6 +4,8 @@ class CreateDistricts < ActiveRecord::Migration
       t.string :name
       t.integer :electorate
       t.integer :mandate
+      t.integer :user_id
+      t.integer :voivodeship_id
 
       t.timestamps null: false
     end

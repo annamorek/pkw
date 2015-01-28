@@ -7,6 +7,8 @@ class CreateVotes < ActiveRecord::Migration
       t.integer :empty
       t.integer :other
       t.integer :card
+      t.integer :commitee_id
+      t.integer :district_id
 
       t.timestamps null: false
     end
