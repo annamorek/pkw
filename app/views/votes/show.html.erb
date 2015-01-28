@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vote:</strong>
+  <%= @vote.vote %>
+</p>
+
+<p>
+  <strong>Valid:</strong>
+  <%= @vote.valid %>
+</p>
+
+<p>
+  <strong>Invalid:</strong>
+  <%= @vote.invalid %>
+</p>
+
+<p>
+  <strong>Empty:</strong>
+  <%= @vote.empty %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @vote.other %>
+</p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @vote.card %>
+</p>
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>
