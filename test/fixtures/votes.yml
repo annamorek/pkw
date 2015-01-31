@@ -2,16 +2,16 @@
 
 one:
   vote: 1
-  valid: 1
-  invalid: 1
+  valid_vote: 1
+  invalid_vote: 1
   empty: 1
   other: 1
   card: 1
 
 two:
   vote: 1
-  valid: 1
-  invalid: 1
+  valid_vote: 1
+  invalid_vote: 1
   empty: 1
   other: 1
   card: 1

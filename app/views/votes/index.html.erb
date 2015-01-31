@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Vote</th>
-      <th>Valid</th>
-      <th>Invalid</th>
+      <th>Valid vote</th>
+      <th>Invalid vote</th>
       <th>Empty</th>
       <th>Other</th>
       <th>Card</th>
@@ -19,8 +19,8 @@
     <% @votes.each do |vote| %>
       <tr>
         <td><%= vote.vote %></td>
-        <td><%= vote.valid %></td>
-        <td><%= vote.invalid %></td>
+        <td><%= vote.valid_vote %></td>
+        <td><%= vote.invalid_vote %></td>
         <td><%= vote.empty %></td>
         <td><%= vote.other %></td>
         <td><%= vote.card %></td>

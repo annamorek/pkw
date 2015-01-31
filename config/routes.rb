@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  resources :votes
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :commitees
 
   resources :voivodeships
-
-  resources :votes
 
   resources :districts
 

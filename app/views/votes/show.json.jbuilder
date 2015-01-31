@@ -1,1 +1,1 @@
-json.extract! @vote, :id, :vote, :valid, :invalid, :empty, :other, :card, :created_at, :updated_at
+json.extract! @vote, :id, :vote, :valid_vote, :invalid_vote, :empty, :other, :card, :created_at, :updated_at
