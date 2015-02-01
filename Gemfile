@@ -49,5 +49,6 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 #Use active_skin for activeadmin
 gem 'active_skin'
-
+#Use Cancancan
+gem 'cancancan', '~> 1.10'
 
