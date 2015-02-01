@@ -43,7 +43,11 @@ group :development, :test do
   gem 'spring'
 end
 
+#Use activeadmin
 gem 'activeadmin', github: 'activeadmin'
 
 gem 'devise'
+#Use active_skin for activeadmin
+gem 'active_skin'
+
 
