@@ -65,8 +65,10 @@ ActiveRecord::Schema.define(version: 20150128173328) do
     t.string   "name"
     t.integer  "electorate"
     t.integer  "mandate"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "voivodeship_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "invalid_vote"
     t.integer  "empty"
     t.integer  "other"
