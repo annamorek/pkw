@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Election</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if !current_user %>
+    <%= link_to "Register", new_user_path %> |
+    <%= link_to "Log In", new_user_session_path %> |
+<% else %>
+    <%= link_to "User", users_path %> |
+    <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+<% end %>
 <%= yield %>
-
 </body>
 </html>

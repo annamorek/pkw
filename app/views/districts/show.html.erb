@@ -20,15 +20,15 @@
 </p>
 <p>
   <strong>Empty vote:</strong>
-  <%= @district.empty_vote %>
+  <%= @district.empty %>
 </p>
 <p>
   <strong>Other vote:</strong>
-  <%= @district.other_vote %>
+  <%= @district.other %>
 </p>
 <p>
   <strong>Issued card:</strong>
-  <%= @district.issued_voting_card %>
+  <%= @district.card %>
 </p>
 <%= link_to 'Edit', edit_district_path(@district) %> |
 <%= link_to 'Back', districts_path %>

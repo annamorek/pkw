@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128173328) do
+ActiveRecord::Schema.define(version: 20150203172522) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -75,12 +75,25 @@ ActiveRecord::Schema.define(version: 20150128173328) do
     t.integer  "card"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "login"
-    t.string   "password"
-    t.string   "role"
+  create_table "user_sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "surname"
+    t.string   "login"
+    t.string   "crypted_password",                  null: false
+    t.string   "password_salt",                     null: false
+    t.string   "persistence_token",                 null: false
+    t.boolean  "admin",             default: false, null: false
+    t.integer  "type"
+    t.string   "city"
+    t.integer  "committee_id"
+    t.integer  "constituency_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "voivodeships", force: :cascade do |t|

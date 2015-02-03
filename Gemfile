@@ -51,4 +51,5 @@ gem 'devise'
 gem 'active_skin'
 #Use Cancancan
 gem 'cancancan', '~> 1.10'
-
+# Use authentication
+gem 'authlogic'
