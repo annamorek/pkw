@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :order, :as => :address
-  accepts_nested_attributes_for :order
-  ROLES = %i[klient kordynator admin]
+  has_one :district
+  ROLES = %i[okregowy centralny admin]
   acts_as_authentic do |config|
     config.validate_login_field = false
     config.validate_email_field = false
