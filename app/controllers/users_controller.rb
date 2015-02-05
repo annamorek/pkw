@@ -13,30 +13,38 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+# GET /users/1/edit
+  def edit
+  end
+# POST /users
+# POST /users.json
   def create
     @user = User.new(user_params)
-# Saving without session maintenance to skip
-# auto-login which can't happen here because
-# the User has not yet been activated
     if @user.save
-      flash[:notice] = "Your account has been created."
+      flash[:notice] = "User was successfully created."
       redirect_to root_url
     else
       flash[:notice] = "There was a problem creating you."
       render :action => :new
     end
   end
-  def edit
-    @user = current_user
-  end
 # PATCH/PUT /users/1
 # PATCH/PUT /users/1.json
-    def update
-      @user = User.find_by_id(params[:id])
-      @user.update_attributes(user_params)
-      flash[:success] = "Zmieniono!"
-    end
-
+  def update
+=begin
+@user = current_user
+if @user.update_attributes(user_params)
+flash[:notice] = "Successfully updated profile."
+redirect_to admin_root_path
+else
+render :action => 'edit'
+end
+=end
+    @user = User.find_by_id(params[:id])
+    @user.update_columns(user_params)
+    flash[:success] = "Done!"
+    redirect_to admin_users_path
+  end
 # DELETE /users/1
 # DELETE /users/1.json
   def destroy
@@ -53,6 +61,6 @@ class UsersController < ApplicationController
   end
 # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:login, :password, :role, :admin, :email, :name, :surname, :street, :number, :city, :zip_code)
+    params.require(:user).permit(:login, :password, :role, :crypted_password, :password_salt, :persistence_token, :password_digest)
   end
 end
