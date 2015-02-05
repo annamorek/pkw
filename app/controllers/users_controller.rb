@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "User was successfully created."
-      redirect_to root_url
+#      redirect_to users_registered
     else
       flash[:notice] = "There was a problem creating you."
       render :action => :new
@@ -31,19 +31,10 @@ class UsersController < ApplicationController
 # PATCH/PUT /users/1
 # PATCH/PUT /users/1.json
   def update
-=begin
-@user = current_user
-if @user.update_attributes(user_params)
-flash[:notice] = "Successfully updated profile."
-redirect_to admin_root_path
-else
-render :action => 'edit'
-end
-=end
-    @user = User.find_by_id(params[:id])
-    @user.update_columns(user_params)
-    flash[:success] = "Done!"
-    redirect_to admin_users_path
+      @user = User.find_by_id(params[:id])
+      @user.update_attributes(user_params)
+      flash[:success] = "Done!"
+      redirect_to admin_users_path
   end
 # DELETE /users/1
 # DELETE /users/1.json

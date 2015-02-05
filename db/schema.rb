@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20150203172522) do
     t.string   "crypted_password",  null: false
     t.string   "password_salt",     null: false
     t.string   "persistence_token", null: false
-    t.integer  "role"
+    t.string   "role"
     t.integer  "committee_id"
     t.integer  "constituency_id"
     t.datetime "created_at"

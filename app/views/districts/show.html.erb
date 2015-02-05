@@ -30,5 +30,13 @@
   <strong>Issued card:</strong>
   <%= @district.card %>
 </p>
+<p>
+  <strong>Nie wiem co to:</strong>
+  <%= @district.valid_votes %>
+</p>
+<p>
+  <strong>Niewazne glosy:</strong>
+  <%= @district.invalid_votes %>
+</p>
 <%= link_to 'Edit', edit_district_path(@district) %> |
 <%= link_to 'Back', districts_path %>
