@@ -9,19 +9,20 @@
           </ul>
         </div>
     <% end %>
-    <p>
-      <%= f.label :login %><br />
+    <div class="field">
+      <strong>Login:</strong><br>
       <%= f.text_field :login %>
-    </p>
-    <p>
-      <%= f.label :password, f.object.new_record? ? nil : "Change password" %><br />
+    </div>
+    <div class="field">
+      <strong>Hasło:</strong><br>
       <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label :password_confirmation %><br />
+    </div>
+    <div class="field">
+      <strong>Potwierdź hasło:</strong> <br />
       <%= f.password_field :password_confirmation %>
-    </p>
-    <p class="actions">
-      <%= f.submit %>
-    </p>
+    </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Zarejestruj" %>
+    </div>
 <% end %>

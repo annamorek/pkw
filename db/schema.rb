@@ -81,15 +81,11 @@ ActiveRecord::Schema.define(version: 20150203172522) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "surname"
     t.string   "login"
-    t.string   "crypted_password",                  null: false
-    t.string   "password_salt",                     null: false
-    t.string   "persistence_token",                 null: false
-    t.boolean  "admin",             default: false, null: false
-    t.integer  "type"
-    t.string   "city"
+    t.string   "crypted_password",  null: false
+    t.string   "password_salt",     null: false
+    t.string   "persistence_token", null: false
+    t.integer  "role"
     t.integer  "committee_id"
     t.integer  "constituency_id"
     t.datetime "created_at"

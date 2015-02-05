@@ -31,15 +31,12 @@ class UsersController < ApplicationController
   end
 # PATCH/PUT /users/1
 # PATCH/PUT /users/1.json
-  def update
-    @user = current_user
-    if @user.update_attributes(user_params)
-      flash[:notice] = "Successfully updated profile."
-      redirect_to admin_root_path
-    else
-      render :action => 'edit'
+    def update
+      @user = User.find_by_id(params[:id])
+      @user.update_attributes(user_params)
+      flash[:success] = "Zmieniono!"
     end
-  end
+
 # DELETE /users/1
 # DELETE /users/1.json
   def destroy

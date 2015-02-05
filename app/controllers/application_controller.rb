@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 # For APIs, you may want to use :null_session instead.
   protect_from_forgery
   helper_method :current_user, :current_user_session
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
   private
   def current_user_session
     return @current_user if defined?(@current_user_sesssion)
@@ -11,10 +16,6 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
-  end
-  def current_client
-    return @current_client if defined?(@current_user)
-    @current_client = User.find(@current_user.id).client_id
   end
   def authenticate
     if !current_user

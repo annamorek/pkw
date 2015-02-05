@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
   has_one :district
-  ROLES = %i[okregowy centralny admin]
+  ROLES = %i[okregowy centralny]
+  validates :password, :on => :create, presence: true
+  validates :login, uniqueness: true, presence: true,
+            length: {within: 6..15}
   acts_as_authentic do |config|
     config.validate_login_field = false
-    config.validate_email_field = false
     config.validate_password_field = false
     config.crypted_password_field = :crypted_password
     config.require_password_confirmation = true
