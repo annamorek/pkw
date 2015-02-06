@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Voivodeships</h1>
+<h1>Województwa</h1>
 
 <table>
   <thead>
@@ -14,9 +14,9 @@
     <% @voivodeships.each do |voivodeship| %>
       <tr>
         <td><%= voivodeship.name %></td>
-        <td><%= link_to 'Show', voivodeship %></td>
-        <td><%= link_to 'Edit', edit_voivodeship_path(voivodeship) %></td>
-        <td><%= link_to 'Destroy', voivodeship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaż', voivodeship %></td>
+        <td><%= link_to 'Edytuj', edit_voivodeship_path(voivodeship) %></td>
+        <td><%= link_to 'Usuń', voivodeship, method: :delete, data: { confirm: 'Na pewno?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,6 @@
 
 <br>
 
-<%= link_to 'New Voivodeship', new_voivodeship_path %>
+<h3><%= link_to 'Dodaj województwo', new_voivodeship_path %></h3>
+<br>
+<br>

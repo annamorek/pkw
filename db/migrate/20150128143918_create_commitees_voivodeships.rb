@@ -1,10 +1,8 @@
 class CreateCommiteesVoivodeships < ActiveRecord::Migration
   def change
-    create_table :commitees_voivodeships do |t|
-      t.integer :commitee_id
-      t.integer :voivodeship_id
-
-      t.timestamps null: false
+    create_table :commitees_voivodeships, id: false do |t|
+      t.integer :commitee_id, null: false
+      t.integer :voivodeship_id, null: false
     end
   end
 end

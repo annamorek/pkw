@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Commitees</h1>
+<h1>Komitety wyborcze</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nazwa</th>
       <th>Logo</th>
-      <th>Party</th>
+      <th>Skrót partii</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= commitee.name %></td>
         <td><%= commitee.logo %></td>
         <td><%= commitee.party %></td>
-        <td><%= link_to 'Show', commitee %></td>
-        <td><%= link_to 'Edit', edit_commitee_path(commitee) %></td>
-        <td><%= link_to 'Destroy', commitee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Pokaż', commitee %></td>
+        <td><%= link_to 'Edytuj', edit_commitee_path(commitee) %></td>
+        <td><%= link_to 'Usuń', commitee, method: :delete, data: { confirm: 'Na pewno?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Commitee', new_commitee_path %>
+<h3><%= link_to 'Dodaj komitet wyborczy', new_commitee_path %></h3>

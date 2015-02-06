@@ -9,5 +9,6 @@ class FixVotes < ActiveRecord::Migration
     remove_column :votes, :card, :integer
     add_column :districts, :card, :integer
     remove_column :votes, :valid_vote, :integer
+
   end
 end

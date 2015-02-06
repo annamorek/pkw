@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Election</title>
+  <title>PKW</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="margin: 50px; padding: 20px ">
+<h3>
 <% if !current_user %>
-    <%= link_to "Register", new_user_path %> |
-    <%= link_to "Log In", new_user_session_path %> |
+    <%= link_to "Rejestracja", new_user_path %> |
+    <%= link_to "Zaloguj się", new_user_session_path %>
 <% else %>
-    <%= link_to "User", users_path %> |
-    <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+    <%= link_to "Wyloguj się", user_session_path, :method => :delete, :confirm => "Na pewno?" %>
 <% end %>
 <%= yield %>
+</h3>
+<h3>
+  <br>
+  <%= link_to 'Województwa', voivodeships_path %> |
+  <%= link_to 'Okręgi', districts_path %> |
+  <%= link_to 'Komitety wyborcze', commitees_path %> |
+  <%= link_to 'Wyniki - głosy', votes_path %> |
+  <%= link_to 'Użytkownicy', users_path %>
+</h3>
 </body>
 </html>

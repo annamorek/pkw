@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203172522) do
+ActiveRecord::Schema.define(version: 20150206173528) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -54,12 +54,12 @@ ActiveRecord::Schema.define(version: 20150203172522) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "commitees_voivodeships", force: :cascade do |t|
-    t.integer  "commitee_id"
-    t.integer  "voivodeship_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+  create_table "commitees_voivodeships", id: false, force: :cascade do |t|
+    t.integer "commitee_id",    null: false
+    t.integer "voivodeship_id", null: false
   end
+
+  add_index "commitees_voivodeships", ["commitee_id", "voivodeship_id"], name: "index_commitees_voivodeships_on_commitee_id_and_voivodeship_id"
 
   create_table "districts", force: :cascade do |t|
     t.string   "name"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20150203172522) do
     t.integer  "district_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "_id"
   end
 
 end

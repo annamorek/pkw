@@ -35,6 +35,7 @@ class UsersController < ApplicationController
       @user.update_attributes(user_params)
       flash[:success] = "Done!"
       redirect_to admin_users_path
+
   end
 # DELETE /users/1
 # DELETE /users/1.json

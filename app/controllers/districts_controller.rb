@@ -19,6 +19,7 @@ class DistrictsController < ApplicationController
 
   # GET /districts/1/edit
   def edit
+
   end
 
   # POST /districts
@@ -68,7 +69,7 @@ class DistrictsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def district_params
-      params.require(:district).permit(:name, :electorate, :mandate)
-    end
+  def district_params
+    params.require(:district).permit(:name, :electorate, :mandate, :invalid_vote, :empty, :other, :card)
+  end
 end

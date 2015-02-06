@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :persistence_token, :null => false
       t.string :role
       t.references :committee
-      t.references :constituency
+      t.references :district
       t.timestamps
     end
   end

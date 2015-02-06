@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   has_one :district
-  ROLES = %i[okregowy centralny]
+  ROLES = %i[Okręgowy Centralny]
   validates :password, :on => :create, presence: true
+  validates_confirmation_of :password
+#unless: Proc.new { |a| a.password.blank? }
   validates :login, uniqueness: true, presence: true,
             length: {within: 6..15}
   acts_as_authentic do |config|
@@ -12,5 +14,11 @@ class User < ActiveRecord::Base
   end
   def role?(base_role)
     ROLES.index(base_role.to_s) <= ROLES.index(role)
+  end
+  def set_districts
+    @districts = District.all.map do |district|
+      [ district.name, district.id]
+#return @districts
+    end
   end
 end

@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Vote:</strong>
+  <strong>Nazwa okręgu:</strong>
+  <%= @vote.nazwad %>
+</p>
+<p>
+  <strong>Komitet wyborczy:</strong>
+  <%= @vote.nazwac %>
+</p>
+<p>
+  <strong>Ilość ważnych głosów:</strong>
   <%= @vote.vote %>
 </p>
 
-<%= link_to 'Edit', edit_vote_path(@vote) %> |
-<%= link_to 'Back', votes_path %>
+<%= link_to 'Edytuj', edit_vote_path(@vote) %> |
+<%= link_to 'Wróć', votes_path %>

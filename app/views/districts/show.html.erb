@@ -1,42 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nazwa okręgu:</strong>
   <%= @district.name %>
 </p>
 
 <p>
-  <strong>Electorate:</strong>
-  <%= @district.electorate %>
-</p>
-
-<p>
-  <strong>Mandate:</strong>
-  <%= @district.mandate %>
+  <strong>Głosy nieważne (wiele zaznaczeń):</strong>
+  <%= @district.invalid_vote %>
 </p>
 <p>
-  <strong>Invalid vote:</strong>
-  <%= @district.mandate %>
-</p>
-<p>
-  <strong>Empty vote:</strong>
+  <strong>Głosy nieważne (puste):</strong>
   <%= @district.empty %>
 </p>
 <p>
-  <strong>Other vote:</strong>
+  <strong>Głosy nieważne (inna przyczyna):</strong>
   <%= @district.other %>
 </p>
 <p>
-  <strong>Issued card:</strong>
+  <strong>Nieważne glosy (suma):</strong>
+  <%= @district.invalid_votes %>
+</p>
+<p>
+  <strong>BEZ Wydane karty:</strong>
   <%= @district.card %>
 </p>
 <p>
-  <strong>Nie wiem co to:</strong>
+  <strong>Ważne głosy dla wszystkich partii:</strong>
   <%= @district.valid_votes %>
 </p>
 <p>
-  <strong>Niewazne glosy:</strong>
-  <%= @district.invalid_votes %>
+  <strong>BEZ Wszystkie oddane głosy (ważne + nieważne)</strong>
+  <%= @district.total %>
 </p>
-<%= link_to 'Edit', edit_district_path(@district) %> |
-<%= link_to 'Back', districts_path %>
+<p>
+  <strong>Porównanie:<br></strong>
+  <strong>Karty: <%= @district.card %><br></strong>
+  <strong>Wszystkie głosy: <%= @district.total %><br></strong>
+  <strong>Różnica (karty wyniesione z lokalu wyborczego): <%= @district.zlodzieje %></strong>
+
+</p>
+
+<%= link_to 'Edytuj', edit_district_path(@district) %> |
+<%= link_to 'Wróć', districts_path %>
