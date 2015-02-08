@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Logo:</strong>
-  <%= @commitee.logo %>
+  <strong>Skrót partii:</strong>
+  <%= @commitee.party %>
 </p>
 
 <p>
-  <strong>Skrót partii:</strong>
-  <%= @commitee.party %>
+  <strong>Logo partii:<br></strong>
+  <%= image_tag @commitee.avatar.url(:thumb) %>
 </p>
 
 <%= link_to 'Edytuj', edit_commitee_path(@commitee) %> |

@@ -70,6 +70,6 @@ class CommiteesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commitee_params
-      params.require(:commitee).permit(:name, :logo, :party)
+      params.require(:commitee).permit(:name, :party, :avatar, :photo)
     end
 end

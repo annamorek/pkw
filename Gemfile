@@ -53,3 +53,5 @@ gem 'active_skin'
 gem 'cancancan', '~> 1.10'
 # Use authentication
 gem 'authlogic'
+#Use paperclip
+gem 'paperclip', '~> 4.2'

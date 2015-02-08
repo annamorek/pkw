@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Nazwa</th>
-      <th>Logo</th>
       <th>Skrót partii</th>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +15,6 @@
     <% @commitees.each do |commitee| %>
       <tr>
         <td><%= commitee.name %></td>
-        <td><%= commitee.logo %></td>
         <td><%= commitee.party %></td>
         <td><%= link_to 'Pokaż', commitee %></td>
         <td><%= link_to 'Edytuj',  edit_commitee_path(commitee) if can? :update, Commitee %></td>

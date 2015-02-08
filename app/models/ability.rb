@@ -16,7 +16,7 @@ class Ability
       can [:index, :show], District, :user_id => user.id
       can :update, District, :user_id => user.id
       can [:index, :show], Vote #, :commitee_id => user.id #, :commitee_id => commitee.id źle?! index niby wyrzucić, bo do wszystkich show/edit
-      can [:index, :show], Commitee
+      can [:index, :show, :update], Commitee
       cannot :destroy, :all
       cannot :create, User
       cannot :manage, Voivodeship
