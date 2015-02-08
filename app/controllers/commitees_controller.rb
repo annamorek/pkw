@@ -1,6 +1,6 @@
 class CommiteesController < ApplicationController
   before_action :set_commitee, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /commitees
   # GET /commitees.json
   def index
@@ -10,6 +10,7 @@ class CommiteesController < ApplicationController
   # GET /commitees/1
   # GET /commitees/1.json
   def show
+    @commitee = Commitee.find(params[:id])
   end
 
   # GET /commitees/new

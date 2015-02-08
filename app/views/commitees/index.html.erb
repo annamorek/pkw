@@ -19,8 +19,8 @@
         <td><%= commitee.logo %></td>
         <td><%= commitee.party %></td>
         <td><%= link_to 'Pokaż', commitee %></td>
-        <td><%= link_to 'Edytuj', edit_commitee_path(commitee) %></td>
-        <td><%= link_to 'Usuń', commitee, method: :delete, data: { confirm: 'Na pewno?' } %></td>
+        <td><%= link_to 'Edytuj',  edit_commitee_path(commitee) if can? :update, Commitee %></td>
+        <td><%= link_to 'Usuń', commitee, method: :delete, data: { confirm: 'Na pewno?' } if can? :destroy, Commitee %></td>
       </tr>
     <% end %>
   </tbody>

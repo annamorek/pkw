@@ -17,9 +17,9 @@
         <td><%= vote.nazwad %></td>
         <td><%= vote.nazwac %></td>
         <td><%= vote.vote %></td>
-        <td><%= link_to 'Pokaż', vote %></td>
-        <td><%= link_to 'Edytuj', edit_vote_path(vote) %></td>
-        <td><%= link_to 'Usuń', vote, method: :delete, data: { confirm: 'Na pewno?' } %></td>
+        <td><%= link_to 'Pokaż', vote if can? :update, Vote %></td>
+        <td><%= link_to 'Edytuj', edit_vote_path(vote) if can? :update, Vote %></td>
+        <td><%= link_to 'Usuń', vote, method: :delete, data: { confirm: 'Na pewno?' } if can? :destroy, Vote %></td>
       </tr>
     <% end %>
   </tbody>

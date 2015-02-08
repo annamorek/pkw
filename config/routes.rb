@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :districts
   resource :user_session, only: [:create, :new, :destroy]
-  root :to => 'voivodeships#index'
+  root :to => 'users#index'
   get 'login' => 'user_sessions#new', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
 

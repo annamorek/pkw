@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   before_action :set_vote, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource :only => [:index, :show, :edit]
+  load_and_authorize_resource :only => [:index, :show, :edit, :update]
 # GET /votes
 # GET /votes.json
   def index
@@ -9,6 +9,7 @@ class VotesController < ApplicationController
 # GET /votes/1
 # GET /votes/1.json
   def show
+    @vote = Vote.find(params[:id])
   end
 # GET /votes/new
   def new
@@ -60,6 +61,6 @@ class VotesController < ApplicationController
   end
 # Never trust parameters from the scary internet, only allow the white list through.
   def vote_params
-    params.require(:vote).permit(:vote)
+    params.require(:vote).permit(:vote, :district_id, :commitee_id)
   end
 end

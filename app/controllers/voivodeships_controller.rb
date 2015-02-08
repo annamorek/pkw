@@ -1,6 +1,7 @@
 class VoivodeshipsController < ApplicationController
   before_action :set_voivodeship, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  load_and_authorize_resource :voivodeship, :through => :district
   # GET /voivodeships
   # GET /voivodeships.json
   def index

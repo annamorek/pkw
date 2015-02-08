@@ -9,10 +9,7 @@ class District < ActiveRecord::Base
   validates :other, numericality: true
   validates :card, numericality: true
   def set_districts
-    @districts = District.all.map do |district|
-      [ district.name, district.id]
-      return @districts
-    end
+    @district = District.find(params[:id])
   end
   def valid_votes
     total = self.votes.inject(0){|s,v| s + v.vote }
@@ -25,8 +22,5 @@ class District < ActiveRecord::Base
   end
   def zlodzieje
     zlodzieje = self.card - self.total
-  end
-  def jakieid
-    jakieid = self.voivodeship_id
   end
 end

@@ -1,6 +1,40 @@
 <h1>Edycja oddancyh głosów dla okręgu</h1>
 
-<%= render 'form' %>
+<%= form_for(@district) do |f| %>
+    <% if @district.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@district.errors.count, "error") %> prohibited this district from being saved:</h2>
+          <ul>
+            <% @district.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+      <strong>Nazwa wybierana z listy</strong><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <strong>Głosy nieważne (wiele zaznaczeń)</strong><br>
+      <%= f.number_field :invalid_vote %>
+    </div>
+    <div class="field">
+      <strong>Głosy nieważne (puste)</strong><br>
+      <%= f.number_field :empty %>
+    </div>
+    <div class="field">
+      <strong>Głosy nieważne (inna przyczyna)</strong><br>
+      <%= f.number_field :other %>
+    </div>
+    <div class="field">
+      <strong>Wydane karty</strong><br>
+      <%= f.number_field :card %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 
 <%= link_to 'Pokaż', @district %> |
 <%= link_to 'Wróć', districts_path %>
+<% end %>

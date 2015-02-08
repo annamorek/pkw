@@ -4,4 +4,5 @@ class Commitee < ActiveRecord::Base
   accepts_nested_attributes_for :voivodeships
   validates :name, presence: true, length: {within: 2..50}
   validates :party, presence: true, length: {within: 2..50}
+
 end

@@ -1,6 +1,6 @@
 class DistrictsController < ApplicationController
   before_action :set_district, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /districts
   # GET /districts.json
   def index
@@ -70,6 +70,6 @@ class DistrictsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def district_params
-    params.require(:district).permit(:name, :electorate, :mandate, :invalid_vote, :empty, :other, :card)
+    params.require(:district).permit(:name, :electorate, :mandate, :invalid_vote, :empty, :other, :card, :voivodeship_id, :user_id)
   end
 end

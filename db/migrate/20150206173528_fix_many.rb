@@ -6,6 +6,5 @@ class FixMany < ActiveRecord::Migration
       t.integer :voivodeship_id, null: false
     end
     add_index :commitees_voivodeships, [:commitee_id, :voivodeship_id]
-    add_column :votes, :_id, :integer
   end
 end
