@@ -12,11 +12,6 @@
   <strong>Liczba mandatów:</strong>
   <%= @district.mandate %>
 </p>
-<br>
-<br>
-
-<br>
-<br>
 <p>
   <strong>Głosy nieważne (wiele zaznaczeń):</strong>
   <%= @district.invalid_vote %>
@@ -34,22 +29,16 @@
   <%= @district.invalid_votes %>
 </p>
 <p>
-  <strong>BEZ Wydane karty:</strong>
-  <%= @district.card %>
-</p>
-<p>
   <strong>Ważne głosy dla wszystkich partii:</strong>
   <%= @district.valid_votes %>
 </p>
-<p>
-  <strong>BEZ Wszystkie oddane głosy (ważne + nieważne)</strong>
-  <%= @district.total %>
-</p>
+
 <p>
   <strong>Porównanie:<br></strong>
   <strong>Karty: <%= @district.card %><br></strong>
   <strong>Wszystkie głosy: <%= @district.total %><br></strong>
-  <strong>Różnica (karty wyniesione z lokalu wyborczego): <%= @district.zlodzieje %></strong>
+  <strong>Różnica (karty wyniesione z lokalu wyborczego): <%= @district.zlodzieje %><br></strong>
+  <strong>Frekwencja: <%= @district.frek %> %</strong>
 
 </p>
 

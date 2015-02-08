@@ -19,12 +19,10 @@
         <td><%= vote.vote %></td>
         <td><%= link_to 'Pokaż', vote if can? :update, Vote %></td>
         <td><%= link_to 'Edytuj', edit_vote_path(vote) if can? :update, Vote %></td>
-        <td><%= link_to 'Usuń', vote, method: :delete, data: { confirm: 'Na pewno?' } if can? :destroy, Vote %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<h3><%= link_to 'Dodaj głosy', new_vote_path %></h3>
+

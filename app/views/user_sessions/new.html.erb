@@ -1,17 +1,17 @@
-<h1>Login</h1>
+<h1>Zaloguj</h1>
 <%= form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
     <p>
-      <%= f.label :login %> <br />
+      Login<br />
       <%= f.text_field :login %>
     </p>
     <p>
-      <%= f.label :password %> <br />
+      Hasło<br />
       <%= f.password_field :password %>
     </p>
     <p>
-      <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
+      <%= f.check_box :remember_me %> Zapamiętaj mnie<br />
     </p>
     <p>
-      <%= f.submit "Login" %>
+      <%= f.submit "Zaloguj" %>
     </p>
 <% end %>

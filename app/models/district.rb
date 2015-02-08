@@ -23,4 +23,10 @@ class District < ActiveRecord::Base
   def zlodzieje
     zlodzieje = self.card - self.total
   end
+  def vo
+    vo = self.voivodeship_id
+  end
+  def frek
+    frek = ((self.total.to_f / self.electorate.to_f)*100).round(2)
+  end
 end
